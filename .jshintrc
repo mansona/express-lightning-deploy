@@ -1,0 +1,16 @@
+{
+  "bitwise": true,
+  "curly": true,
+  "eqeqeq": true,
+  "esnext": true,
+  "latedef": "nofunc",
+  "noarg": true,
+  "node": true,
+  "quotmark": "single",
+  "strict": true,
+  "plusplus": false,
+  "regexp": false,
+  "strict": false,
+  "undef": true,
+  "unused": true
+}

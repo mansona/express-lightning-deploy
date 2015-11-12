@@ -1,0 +1,19 @@
+{
+  "name": "package",
+  "version": "0.0.0",
+  "dependencies": {
+    "authmaker-verify-express": "^1.1.2",
+    "body-parser": "^1.14.1",
+    "cors": "^2.5.3",
+    "express": "^4.12.3",
+    "express-autoroute": "^1.2.1",
+    "express-autoroute-json": "^3.0.0-alpha2.3",
+    "express-session": "^1.10.4",
+    "lodash": "^3.7.0",
+    "mongoose": "^4.0.4",
+    "morgan": "^1.5.2",
+    "nconf": "^0.8.2",
+    "q": "^1.2.0",
+    "winston": "^2.0.0"
+  }
+}

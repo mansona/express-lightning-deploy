@@ -1,7 +1,6 @@
 var cors = require('cors');
 var express = require('express');
 var winston = require('winston');
-var nconf = require('nconf');
 
 var settings = require('./settings');
 
@@ -24,9 +23,6 @@ if (process.env.LOG_LEVEL) {
 }
 
 winston.add(winston.transports.Console, winstonOptions);
-
-//Initialisations
-require('./init')(nconf);
 
 var app = express();
 

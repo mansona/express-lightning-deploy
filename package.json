@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "dependencies": {
     "authmaker-verify-express": "^1.1.2",
+    "bluebird": "^3.0.5",
     "body-parser": "^1.14.1",
     "cors": "^2.5.3",
     "express": "^4.12.3",
@@ -14,6 +15,14 @@
     "morgan": "^1.5.2",
     "nconf": "^0.8.2",
     "q": "^1.2.0",
+    "redis": "^2.3.0",
     "winston": "^2.0.0"
+  },
+  "scripts": {
+    "deploy-production": "pm2 deploy ecosystem.json5 production update",
+    "start": "NODE_ENV=development pm2 start app.js --name workrural-server",
+    "start-watch": "npm start -- --watch",
+    "test": "NODE_ENV=test mocha --recursive --reporter spec",
+    "test-watch": "npm run test -- -w --reporter min"
   }
 }

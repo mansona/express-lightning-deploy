@@ -20,7 +20,6 @@
     "winston": "^2.0.0"
   },
   "scripts": {
-    "deploy-production": "pm2 deploy ecosystem.json5 production update",
     "start": "NODE_ENV=development pm2 start app.js --name lightning-deploy-default",
     "start-watch": "npm start -- --watch",
     "test": "NODE_ENV=test mocha --recursive --reporter spec",

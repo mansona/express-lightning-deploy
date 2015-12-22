@@ -10,7 +10,16 @@ nconf.file('localOverrides', __dirname + '/' + process.env.NODE_ENV + '.json');
 //common options
 nconf.defaults({
   server: {
-    runPort: 3000,
+    runPort: 3800,
+  },
+
+  lightning: {
+    appName: 'lightning-app',
+  },
+
+  redis: {
+    port: 6379,
+    host: '127.0.0.1',
   },
 });
 

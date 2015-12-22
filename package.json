@@ -9,6 +9,7 @@
     "express": "^4.12.3",
     "express-autoroute": "^1.2.1",
     "express-autoroute-json": "^3.0.0-alpha2.3",
+    "express-handlebars": "^2.0.1",
     "express-session": "^1.10.4",
     "lodash": "^3.7.0",
     "mongoose": "^4.0.4",
@@ -20,7 +21,7 @@
   },
   "scripts": {
     "deploy-production": "pm2 deploy ecosystem.json5 production update",
-    "start": "NODE_ENV=development pm2 start app.js --name workrural-server",
+    "start": "NODE_ENV=development pm2 start app.js --name lightning-deploy-default",
     "start-watch": "npm start -- --watch",
     "test": "NODE_ENV=test mocha --recursive --reporter spec",
     "test-watch": "npm run test -- -w --reporter min"

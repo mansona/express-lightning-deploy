@@ -1,0 +1,10 @@
+<h1>Revisions</h1>
+
+{{#if revisions.length}}
+  <p> Earliest Revision at the top </p>
+{{/if}}
+{{#each revisions}}
+<p> View <a href="/?revision={{this}}">{{this}}</a>
+{{else}}
+<p> No Revisions </p>
+{{/each}}

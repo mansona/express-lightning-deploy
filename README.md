@@ -12,7 +12,7 @@ Clone this repo `git clone git@github.com:stonecircle/express-lightning-deploy.g
 You now have a running lightning deploy server (NODE_ENV is set to `development`) listening on port `3800` and serving the lightning app index prefix `lightning-app`, which means that your current active index file can be found with this Redis key: `lightning-app:index:current`.
 
 ### Revisions
-This app supports custom revisions for your lightning-deploy app 🎉 to see a list of the current revisions go to http://localhost:3800/revisions and click the revision you want to see. It will then bring you to http://localhost:3800/?revision=bcda77d8e2357c7d4d707baa452a64ca and ship you the corresponding index.html file.
+This app supports custom revisions for your lightning-deploy app 🎉 to see a list of the current revisions go to [http://localhost:3800/revisions](http://localhost:3800/revisions) and click the revision you want to see. It will then bring you to [http://localhost:3800/?revision=bcda77d8e2357c7d4d707baa452a64ca](http://localhost:3800/?revision=bcda77d8e2357c7d4d707baa452a64ca) and ship you the corresponding index.html file.
 
 ### Overriding the Default Settings
 This app uses [nconf](https://www.npmjs.com/package/nconf), it's not important to know the workings of nconf to be able to override the settings. If you are running a development server (NODE_ENV set to `development`) you just need to create a file `settings/development.json` with the settings that you want to override. Here is an example settings file:

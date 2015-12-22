@@ -1,10 +1,11 @@
 var bluebird = require('bluebird');
 var expressHandlebars = require('express-handlebars');
 var nconf = require('nconf');
-var Q = require('q');
-
 var redis = require('redis');
+
 var client = redis.createClient();
+var Promise = bluebird; //for style
+
 bluebird.promisifyAll(redis.RedisClient.prototype);
 bluebird.promisifyAll(redis.Multi.prototype);
 
@@ -26,7 +27,7 @@ module.exports = function(app) {
   //fall back to shipping the default index.html
   app.get('*', function(req, res) {
 
-    Q.fcall(function() {
+    Promise.resolve().then(function() {
       if (req.query.revision) {
         return req.query.revision;
       }

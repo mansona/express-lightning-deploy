@@ -20,11 +20,11 @@ This app uses [nconf](https://www.npmjs.com/package/nconf), it's not important t
 ```json
 {
   "server": {
-    "runPort": 4484,
+    "runPort": 4484
   },
 
   "lightning": {
-    "appName": "my-super-app",
+    "appName": "my-super-app"
   }
 }
 ```

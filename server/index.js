@@ -3,7 +3,7 @@ var expressHandlebars = require('express-handlebars');
 var nconf = require('nconf');
 var redis = require('redis');
 
-var client = redis.createClient();
+var client = redis.createClient(nconf.get('redis'));
 var Promise = bluebird; //for style
 
 bluebird.promisifyAll(redis.RedisClient.prototype);

@@ -1,6 +1,6 @@
 {
   "name": "express-lightning-deploy",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "dependencies": {
     "authmaker-verify-express": "^1.1.2",
     "bluebird": "^3.0.5",

@@ -1,5 +1,5 @@
 {
-  "name": "package",
+  "name": "express-lightning-deploy",
   "version": "0.0.1",
   "dependencies": {
     "authmaker-verify-express": "^1.1.2",

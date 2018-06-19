@@ -1,27 +1,32 @@
 {
   "name": "express-lightning-deploy",
   "version": "1.0.0",
+  "@authmaker/generator-express:version": "3.1.0",
+  "scripts": {
+    "start": "NODE_ENV=production node app.js",
+    "start-local": "NODE_ENV=development pm2 start app.js --name express-lightning-deploy --watch",
+    "test": "NODE_ENV=test mocha --recursive --reporter spec",
+    "test-watch": "npm run test -- -w --reporter min"
+  },
   "dependencies": {
-    "authmaker-verify-express": "^1.1.2",
-    "bluebird": "^3.0.5",
     "body-parser": "^1.14.1",
     "cors": "^2.5.3",
     "express": "^4.12.3",
-    "express-autoroute": "^1.2.1",
-    "express-autoroute-json": "^3.0.0-alpha2.3",
-    "express-handlebars": "^2.0.1",
-    "express-session": "^1.10.4",
-    "lodash": "^3.7.0",
-    "mongoose": "^4.0.4",
+    "express-autoroute": "^2.1.0",
+    "express-handlebars": "^3.0.0",
+    "lodash": "^4.13.1",
     "morgan": "^1.5.2",
-    "nconf": "^0.8.2",
+    "nconf": "^0.10.0",
     "redis": "^2.3.0",
     "winston": "^2.0.0"
   },
-  "scripts": {
-    "start": "NODE_ENV=development pm2 start app.js --name lightning-deploy-default",
-    "start-watch": "npm start -- --watch",
-    "test": "NODE_ENV=test mocha --recursive --reporter spec",
-    "test-watch": "npm run test -- -w --reporter min"
+  "devDependencies": {
+    "eslint": "^4.11.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "mocha": "^5.2.0"
+  },
+  "engines": {
+    "node": "8.* || >= 10.*"
   }
 }

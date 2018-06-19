@@ -1,0 +1,5 @@
+{
+  "nconf": {
+    "file": "./settings/secure.json"
+  }
+}

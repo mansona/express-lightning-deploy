@@ -1,10 +1,59 @@
+<style>
+  table {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  td {
+    text-align: center;
+  }
+
+  tr, th {
+    background-color: #f2f2f2;
+    border: 1px solid #ddd;
+    padding: .35em;
+  }
+
+  tr:nth-child(odd) {
+    background-color: #e2e2e2;
+    border: 1px solid #ddd;
+    padding: .35em;
+  }
+
+  th, td {
+    padding: .7em;
+  }
+</style>
+
 <h1>Revisions</h1>
 
-{{#if revisions.length}}
-  <p> Earliest Revision at the top </p>
-{{/if}}
-{{#each revisions}}
-<p> View <a href="/?revision={{this}}">{{this}}</a>
+<p>
+{{#if revisionData.length}}
+  <table>
+    <thead>
+      <th>View</th>
+      <th>Deployed</th>
+      <th>Last Commit</th>
+      <th>Last Commit time</th>
+      <th>branch</th>
+    </thead>
+    <tbody>
+      {{#each revisionData}}
+        <tr>
+          <td><a href="/?revision={{revisionKey}}">View</a></td>
+          <td>{{timestamp}}</td>
+          <td>{{shortSha}}</td>
+          <td>{{scm.timestamp}}</td>
+          <td>{{scm.branch}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
 {{else}}
-<p> No Revisions </p>
-{{/each}}
+  <p> No Revisions </p>
+{{/if}}

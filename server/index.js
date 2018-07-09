@@ -17,21 +17,21 @@ module.exports = (app) => {
 
   app.get('/revisions', async (req, res) => {
     const revisions = await zrangeAsync(`${nconf.get('lightning:appName')}:index:revisions`, 0, -1);
+    const activeKey = await getAsync(`${nconf.get('lightning:appName')}:index:current`);
 
     const revisionDataPromises = revisions.map(async (revision) => {
-      let data = await getAsync(`${nconf.get('lightning:appName')}:index:revision-data:${revision}`);
+      const data = await getAsync(`${nconf.get('lightning:appName')}:index:revision-data:${revision}`);
 
-      let parsedData = JSON.parse(data)
+      const parsedData = JSON.parse(data);
 
       return {
         ...parsedData,
         shortSha: parsedData.scm.sha.substring(0, 7),
-      }
+        active: parsedData.revisionKey === activeKey,
+      };
     });
 
     const revisionData = await Promise.all(revisionDataPromises);
-
-    console.log(revisionData);
 
     res.render('revisions.hbs', { revisionData });
   });

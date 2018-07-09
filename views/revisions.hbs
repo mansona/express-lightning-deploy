@@ -45,7 +45,11 @@
     <tbody>
       {{#each revisionData}}
         <tr>
-          <td><a href="/?revision={{revisionKey}}">View</a></td>
+          {{#if active}}
+            <td>Active! <a href="/">View</a></td>
+          {{else}}
+            <td><a href="/?revision={{revisionKey}}">View</a></td>
+          {{/if}}
           <td>{{timestamp}}</td>
           <td>{{shortSha}}</td>
           <td>{{scm.timestamp}}</td>
